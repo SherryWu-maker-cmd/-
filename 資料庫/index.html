@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你是欣儀嗎客訴處理系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>客訴表單</h1>
+        <form id="complaintForm">
+            <label>你是欣儀嗎:</label>
+            <div class="radio-group">
+                <input type="radio" id="yes" name="isXinYi" value="yes" required>
+                <label for="yes">是</label>
+                <span class="radio-spacing"></span>
+                <input type="radio" id="no" name="isXinYi" value="no">
+                <label for="no">否</label>
+            </div>
+
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">連絡電話:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="complaint">客訴事項:</label>
+            <textarea id="complaint" name="complaint" required></textarea>
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
