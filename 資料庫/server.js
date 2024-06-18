@@ -8,7 +8,6 @@ const port = 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
-// 處理POST請求
 app.post('/submit_complaint', (req, res) => {
     const { isXinYi, name, phone, email, complaint } = req.body;
 
@@ -22,18 +21,16 @@ app.post('/submit_complaint', (req, res) => {
             if (err) {
                 return res.status(500).send('提交失敗');
             }
-            res.status(200).send('提交成功');
+            res.redirect('/thankyou');
         });
     });
     db.close();
 });
 
-// 處理根路徑
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// 感謝頁面路由
 app.get('/thankyou', (req, res) => {
     res.send('感謝您的回覆！');
 });
